@@ -12,11 +12,27 @@ Report will be written in Markdown.
 
 #### 2.2. Block Quote
 #### 2.3. Lists
+
 #### 2.4. Code
+`<pre><code></code></pre>`<br>
+Use the `printf()` function
+```
+Use the printf() function
+```
 #### 2.5. Horizontal Line
+<hr />
+* * *
+***
+- - -
+
+---
 #### 2.6. Links
 #### 2.7. Text Emphasize
 #### 2.8. Image
 #### 2.9. Markdown Syntax Reference
-https://nolboo.kim/blog/2013/09/07/john-gruber-markdown/
-https://gist.github.com/ihoneymon/652be052a0727ad59601#this-is-an-h1
+[john-gruber-markdown Korean](https://nolboo.kim/blog/2013/09/07/john-gruber-markdown/) <br>
+[ihoneymon](https://gist.github.com/ihoneymon/652be052a0727ad59601#this-is-an-h1)
+
+
+
+## 새로운 내용
