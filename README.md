@@ -15,7 +15,7 @@ Report will be written in Markdown.
 #### 2.3. Lists
 
 #### 2.4. Code
-`<pre><code></code></pre>`<br>
+`<pre><code></code></pre> or ```<code> ``` `<br>
 Use the `printf()` function
 ```
 Use the printf() function
