@@ -1,5 +1,5 @@
 ## Error note for Github
-- - -
+-
 #### Initial `git pull` Error
 When making new projects in local and remote. <br>
 You have to use `git pull` before pushing to remote origin/master using `git push`.<br>
