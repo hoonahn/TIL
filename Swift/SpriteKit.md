@@ -3,6 +3,13 @@
 #### Example Game; Pierre Penguin Escape
 
 -
+
+#### Sprite
+
+##### Player Sprite
+##### Enemy Sprite
+##### Environment Sprite
+-
 #### 물리 시뮬레이션 역학
 ##### SpriteKit의 물리 시스템
 ##### 1. Physics Body
@@ -23,4 +30,21 @@
   - - -
 
 #### 컨트롤
-#### 
+  - Tilt
+    - motionManager을 통해 device가 기울어진 정도를 받아냄
+    - UIApplication에서 공유되는 정보 중 현재 기기가 기울거진 방향을 받아올 수 있음
+  - Tap
+    - SpriteKit은 화면이 터치될 때마다 touchesBegan() 함수가 호출됨
+    - 터치의 위치 확인, 터치 위치에 sprite node가 있는지 판별
+    - 해당 node가 GameSprite 프로토콜을 채택했는지 판별 후 채택했다면 onTap() 함수 호출
+    - TIP) touchesBegan() 함수는 didSimulatePhysics() 함수 바로 다음에 위치
+
+-
+
+### Error Catch
+
+#### binary operator with CGFloat
+```
+binary operator '/' cannot be applied to operands of type 'CGFloat' and 'int'
+```
+int 타입과 CGFloat 타입을 바로 연산하는 것은 불가능하므로, int 타입 변수를 CGFloat() 함수 내부에 인자로 넘겨서 타입 변환을 시켜준다.
