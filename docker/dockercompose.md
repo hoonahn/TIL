@@ -10,6 +10,8 @@ Docker compose file is written in ```.yaml``` format.
 Basic file name is ```docker-compose.yml``` and it will define the details of versions and options for the containers.
 
 ``` YAML
+# This code block is just an example for decribing some options we can set on docker-compose.yml. The actual file may not run properly.
+
 # Define version of Docker Compose.
 version: "3"
 # Define services we will use.
@@ -26,20 +28,38 @@ services:
       - POSTGRES_USER=sampleuser
       - POSTGRES_PASSWORD=samplesecret
       - POSTGRES_INITDB_ARGS=--encoding=UTF-8
-    # Healthcheck
+    # Healthcheck can check if its safe to run this container.
     healthcheck:
-      test:
+      # test command: 'pg_isready' checks whether database server is available to access.
+      test: "pg_isready -h localhost -p 5432 -q -U postgres" 
+      interval: 3s 
+      timeout: 1s
+      retries: 10
   web:
     # Set Build options.
     build: .
     # Define how to connect the ports. [Host port:Container port]
     ports:
-    - "5000:5000"
+      - "5000:5000"
     volumes:
-    - .:/code
-    - logvolume01:/var/log
+      - .:/code
+      - logvolume01:/var/log
+    # Dependancy with other services. 
+    depends_on:
+      db:
+        # With 'healthcheck' on 'db' and 'service_healthy', we can run web service after db service is healthy and ready.
+        condition: service_healthy
+    # In 'web' container, we can reference 'redis' or 'db'.
     links:
-    - redis
+      - redis
+      - db
+    #some commands to run the docker run. It can be a actual command or a shell script.
+    command:
+      - command: /start_dev.sh
+      # ex) /start_dev.sh
+      # #!/bin/sh
+      # python manage.py migrate
+      # python manage.py runserver 0:5000
   redis:
     # Define name of the image and tag and also version(default is latest).
     image: redis
@@ -47,6 +67,18 @@ volumes:
   logvolume01: {}
 
 ```
+
+1. ### When you edit the docker-compose.yml file.
+
+If you just edited the docker-compose file and you want to see the difference, usually you have to stop the service(```stop```), remove it(```rm```) and restart it again(```up```).
+
+But with the ```up``` command, it checks whether there is some difference and automatically re-creates the service and restart it.
+
+```
+$ docker-compose up -d [<name_of_the_service>]
+```
+
+If this doesn't work, use the ```--force-recreate``` option.
 
 [Example of Django powered by docker compose](https://github.com/HoonAhn/dockercompose_django)
 
@@ -72,6 +104,8 @@ volumes:
 #### References
 
 ##### Docker
+
+- [Docker (Compose) 활용법 - 개발 환경 구성하기](http://raccoonyy.github.io/docker-usages-for-dev-environment-setup/)
 
 ##### YAML
 
