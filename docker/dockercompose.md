@@ -2,6 +2,8 @@
 
 [Official Documentation](https://docs.docker.com/compose/)
 
+[Git Repository](https://github.com/docker/compose)
+
 > *"Compose is a tool for defining and running multi-container Docker applications."*
 
 ## Structure
