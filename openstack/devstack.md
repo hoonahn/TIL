@@ -37,6 +37,20 @@ $ cat /etc/hosts
 ...
 ```
 
+### ALLOWED_HOST - Solved
+
+OpenStack이 ./stack.sh 실행되고 있으나 대시보드 접근이 안되고, horizon.log에서 ALLOWED_HOST 관련 에러가 발생시 직접 활성 등록을 하면 해결된다.
+
+```bash
+sudo vi /opt/stack/horizon/openstack_dashboard/local/local_settings.py
+
+ALLOWED_HOSTS = ['www.example.com']
+↓
+ALLOWED_HOSTS = ['{host_ip_address}']
+```
+
+---
+
 #### Reference to solve this issue
 
 [Error message “sudo: unable to resolve host (none)”
