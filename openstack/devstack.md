@@ -14,29 +14,30 @@ Tutorials to install DevStack is in the documentation link.
 
 ## Issue
 
-### hostname
+### unable to resolve host - Solved
 
 devstack 설치 과정 마지막에 ```./stack.sh``` 커맨드 실행시 중간에 호스트를 확인하는 과정에서 다음 에러가 발생하며 설치가 중단됨.
 
-```
+```bash
 $ hostname -f
 hostname: Name or service not known
 ```
 
-찾아보니 /etc/hosts 와 /etc/hostname 간에 매핑이 잘 안되어 있어서 그렇다고 하는데, 다시 확인이 필요할 것 같다.
+찾아보니 ```/etc/hosts```와 ```/etc/hostname``` 간에 매핑이 잘 안되어 있어서 그렇다고 하는데, 다시 확인이 필요할 것 같다.
 
+확인 결과 ```/etc/hostname```에 있는 호스트 명과 ```/etc/hosts```에 127.0.1.1 호스트 명이 일치하지 않았다. 같은 호스트 명으로 일치 시키니 ```stack.sh``` 스크립트가 정상적으로 작동하며 설치가 진행되었다.
+
+```bash
+$ cat /etc/hostname
+{name_of_host}
+
+$ cat /etc/hosts
+127.0.0.1   localhost
+127.0.1.1   {name_of_host}
+...
 ```
-+++lib/tls:source:43                         hostname -f
-hostname: Name or service not known
-++lib/tls:source:43                         DEVSTACK_HOSTNAME=
-+++lib/tls:source:43                         err_trap
-+++./stack.sh:err_trap:563                   local r=1
-+++./stack.sh:err_trap:564                   set +o xtrace
-stack.sh failed
-Error on exit
-World dumping... see /opt/stack/logs/worlddump-2018-12-21-070944.txt for details
-/bin/sh: 1: brctl: not found
-sudo: unable to resolve host kr-dev02.micfo.com
-sudo: unable to resolve host kr-dev02.micfo.com
-sudo: unable to resolve host kr-dev02.micfo.com
-```
+
+#### Reference to solve this issue
+
+[Error message “sudo: unable to resolve host (none)”
+](https://askubuntu.com/questions/59458/error-message-sudo-unable-to-resolve-host-none)
