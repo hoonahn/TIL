@@ -9,7 +9,7 @@ Reports of what I've learned today.
 3. Single report should contain single part of study. Reports can be reference or referenced.
 4. Try to write it in English, but some issue solving can be written in Korean.
 
-## 2. Simple Markdown Syntax.
+## 2. Simple Markdown Syntax
 
 ### 2.1. Header
 
