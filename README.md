@@ -15,6 +15,30 @@ Reports of what I've learned today.
 
 More ```#``` makes the header smaller.
 
+```
+# H1
+## H2
+### H3
+#### H4
+##### H5
+###### H6 is the smallest
+####### H7
+```
+
+# H1
+
+## H2
+
+### H3
+
+#### H4
+
+##### H5
+
+###### H6 is the smallest
+
+####### H7
+
 ### 2.2. Block Quote
 
 Use ```>``` to make block quote.
