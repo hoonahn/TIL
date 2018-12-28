@@ -8,4 +8,4 @@
 
 [Install Docker CE on Ubuntu](https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-from-a-package)
 
-[Docker Compose](./dockercompose.md)
+[Docker Compose](./docker-compose.md)
