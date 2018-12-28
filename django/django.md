@@ -39,17 +39,24 @@ $ python manage.py runserver {port_number}
 
 ### Basic directory and file structure
 
+Command for starting django app.
+
+```
+$ python manage.py startapp {app_name}
+```
+
 ```bash
 {app_name}/
     __init__.py
     admin.py    # 관리자 및 관리자페이지 설정
     apps.py
     migrations/ # 데이터베이스 관련 작업이 있을 때 파일이 생성되는 폴더
+        __init__.py
     models.py   # 데이터베이스 모델 설계
     tests.py    # test code
     views.py    # 페이지 접속시, 보여줄 html을 설정하거나 행동을 규정
-    templates/  # html 템플릿을 모아두는 곳
 ```
+
 [Example of Django powered by docker compose](../docker/dockercompose_django)
 
 ---
