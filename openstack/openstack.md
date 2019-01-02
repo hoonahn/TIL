@@ -21,6 +21,7 @@ Missing value auth-url required for auth plugin password
 ```bash
 $ . openrc admin demo
 ```
+
 ---
 
 #### Reference
