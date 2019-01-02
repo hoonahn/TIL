@@ -57,7 +57,28 @@ $ python manage.py startapp {app_name}
     views.py    # 페이지 접속시, 보여줄 html을 설정하거나 행동을 규정
 ```
 
-[Example of Django powered by docker compose](../docker/dockercompose_django)
+[Example of Django powered by docker compose](https://github.com/HoonAhn/dockercompose_django)
+
+### Django w/ Docker Compose
+
+Docker Compose 로 정의된 Django 프로젝트의 경우 명령어를 입력할 때에 다음과 같이 진행한다.
+
+```bash
+docker-compose run {name_of_webapp} django-admin.py startproject {name_of_django_project} .
+docker-compose run {name_of_webapp} python manage.py startapps {name_of_django_app}
+```
+
+```migrate``` 이나 ```createsuperuser``` 와 같은 명령어도 동일하게 위와 같은 방식으로 사용할 수 있다.\
+Web App 뿐만 아니라 DB App 의 경우 ```run``` 뒤에 DB App의 이름을 넣고 실행하면 접근할 수 있다.
+
+[TIL of Docker-Compose](../docker/docker-compose.md)
+
+
+### Migration
+
+> "History of changes of Model"
+
+[Doc of Migration](https://docs.djangoproject.com/en/1.10/topics/migrations/)
 
 ---
 
