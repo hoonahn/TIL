@@ -35,6 +35,4 @@ $ su - {name_of_user}
 
 #### Reference
 
-##### Ref 1
-
-- [Ref]()
+- [How To Create a Sudo User on Ubuntu](https://www.digitalocean.com/community/tutorials/how-to-create-a-sudo-user-on-ubuntu-quickstart)
