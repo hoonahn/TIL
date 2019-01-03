@@ -16,7 +16,7 @@ Enter a file in which to save the key (/Users/yourusername/.ssh/id_rsa) : id_rsa
 After this you should set the passphrase(a.k.a password).\
 Then you can find id_rsa_personal file and id_rsa_personal.pub file.
 
-2. Add ssh key to your Github
+2. Add ssh key to your Github/GitLab
 
 Go to personal GitHub -> Settings -> SSH and GPG keys -> New SSH key.
 
