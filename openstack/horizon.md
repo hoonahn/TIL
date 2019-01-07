@@ -50,6 +50,17 @@ openstack_dashboard/
     wsgi.py
 ```
 
+## Customize Dashboard
+
+[Customize and configure the Dashboard](https://docs.openstack.org/horizon/rocky/admin/customize-configure.html)
+
+Next step is customizing the Horizon Dashboard.\
+
+If you edited something inside Horizon project, you should this command in Horizon project directory.
+
+```
+python manage.py compress
+```
 
 ---
 
