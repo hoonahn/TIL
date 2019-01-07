@@ -6,6 +6,14 @@
 
 > *"OpenStack is a cloud operating system that controls large pools of compute, storage, and networking resources throughout a datacenter, all managed through a dashboard that gives administrators control while empowering their users to provision resources through a web interface."*
 
+## Restarting OpenStack service
+
+### Restarting Horizon
+
+```
+sudo service apache2 restart
+```
+
 ## Issue
 
 ### Missing value auth-url required for auth plugin password - Solved
@@ -27,3 +35,4 @@ $ . openrc admin demo
 #### Reference
 
 - [Devstack을 활용한 오픈스택 설치하기](https://www.popit.kr/devstack-%EC%9D%B4%EC%9A%A9-%EC%98%A4%ED%94%88%EC%8A%A4%ED%83%9D-%EC%84%A4%EC%B9%98%ED%95%98%EA%B8%B0/)
+- [Restart an OpenStack service](https://docs.openstack.org/fuel-docs/latest/userdocs/fuel-user-guide/troubleshooting/restart-service.html)
