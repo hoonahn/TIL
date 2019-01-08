@@ -12,6 +12,31 @@
 
 Tutorials to install DevStack is in the documentation link.
 
+## Uninstall DevStack
+
+Remove devstack and user "stack"
+
+```bash
+$ cd devstack
+$ ./unstack.sh
+$ ./clean.sh
+$ cd ..
+$ sudo rm -rf devstack
+$ sudo rm -rf /opt/stack # user name: stack
+$ sudo rm -rf /usr/local/bin/
+```
+
+Clear related Python files.
+
+```bash
+# I tried to re-install devstack after not going through this step, several errors came out. 
+# So this step is recommanded.
+$ cd /usr/local
+$ sudo rm -rf lib/python2.7/dist-packages/* site_ruby/* bin/*
+# Reboot the system.
+$ sudo reboot
+```
+
 ## Issue
 
 ### unable to resolve host - Solved
@@ -51,7 +76,8 @@ ALLOWED_HOSTS = ['{host_ip_address}']
 
 ---
 
-#### Reference to solve this issue
+#### Reference
 
-[Error message “sudo: unable to resolve host (none)”
+- [Error message “sudo: unable to resolve host (none)”
 ](https://askubuntu.com/questions/59458/error-message-sudo-unable-to-resolve-host-none)
+- [How To Completely Uninstall Devstack](https://nguyentrihai.com/?p=481)
