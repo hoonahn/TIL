@@ -78,6 +78,5 @@ ALLOWED_HOSTS = ['{host_ip_address}']
 
 #### Reference
 
-- [Error message “sudo: unable to resolve host (none)”
-](https://askubuntu.com/questions/59458/error-message-sudo-unable-to-resolve-host-none)
+- [Error message “sudo: unable to resolve host (none)”](https://askubuntu.com/questions/59458/error-message-sudo-unable-to-resolve-host-none)
 - [How To Completely Uninstall Devstack](https://nguyentrihai.com/?p=481)
