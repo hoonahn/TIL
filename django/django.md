@@ -79,6 +79,7 @@ Web App 뿐만 아니라 DB App 의 경우 ```run``` 뒤에 DB App의 이름을 
 > "History of changes of Model"
 
 [Doc of Migration](https://docs.djangoproject.com/en/1.10/topics/migrations/)
+[초보몽키의 개발공부로그 Django 기본 05 - Migration](https://wayhome25.github.io/django/2017/03/20/django-ep6-migrations/)
 
 ---
 
