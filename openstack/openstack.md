@@ -14,6 +14,10 @@
 sudo service apache2 restart
 ```
 
+## Accessing created instance through ssh
+
+[인스턴스에 접속해보자](http://naleejang.tistory.com/118?category=527426)
+
 ## Issue
 
 ### Missing value auth-url required for auth plugin password - Solved
