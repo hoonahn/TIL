@@ -16,3 +16,5 @@ Key required OpenStack services
 
 - [Nova System Architecture](https://docs.openstack.org/nova/latest/user/architecture.html)
 - [Compute Server Overview KR](https://docs.openstack.org/mitaka/ko_KR/install-guide-obs/common/get_started_compute.html)
+- [Verify operation](https://docs.openstack.org/nova/latest/install/verify.html)
+- [Compute Documentaion - Admin](https://docs.openstack.org/nova/latest/admin/index.html)
