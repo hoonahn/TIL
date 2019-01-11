@@ -97,10 +97,10 @@ Use the printf() function
 
 ```
 ![alt text](url)
-New Batman logo: ![batman](./resource/batman-new.png)
+New Batman logo: ![batman](./asset/batman-new.png)
 ```
 
-New Batman logo: ![batman](./resource/batman-new.png)
+New Batman logo: ![batman](./asset/batman-new.png)
 
 ### 2.9. Markdown Syntax Reference
 
