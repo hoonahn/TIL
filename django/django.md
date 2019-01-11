@@ -6,9 +6,70 @@
 
 > *"Django makes it easier to build better Web apps more quickly and with less code."*
 
-## Django project directory
+## Django Design Pattern
 
-### Basic directory and file structure
+### MTV
+
+Django's design pattern is so called MTV(Model, Template, View), similar to MVC.
+
+#### Model
+
+Expresses data. Coded with ```class```.\
+One Model class is expressed as one table in database system.
+
+```python
+class News(models.Model):
+    title = models.CharField(max=100)
+    contents = models.textField()
+    date = models.DateTimeField(default=timezone.now)
+
+    def publish(self):
+        self.save()
+```
+
+Each variables in class is a table field in db. Each field creates class instance of each models.~Field() and allocate them.\
+Therefore field creates class variable instead of instance variables.
+
+#### Template
+
+Made with HTML and has only presentation logic for presenting the view.\
+Dynamically uses data fretched from View on templates.\
+(Similar role of View from MVC pattern.)
+
+##### Django Template Language
+
+Syntax used in Django Template.\
+Consists of:
+
+```django
+{# Template Variables #}
+<h3>{{ data }}</h3>
+
+{# Template Tags #}
+{% for item in data %}
+    <ol>
+        <li>{{ item.name }}</li>
+    </ol>
+{% endfor %}
+
+{# Template Filters #}
+{{ title|upper }}
+{{ date|data:"Y/m/d" }}
+
+{# Template Comments #}
+{# one-line comment #}
+{% multi-line comment %}
+say something
+{% endcomment %}
+```
+
+#### View
+
+Consist of methods, form of getting HTTPRequest and returning HTTPResponse.\
+View is the core of the logic. Gets the data from Model and hand it to Template.\
+(Similar to Controller from MVC pattern.)
+
+## Django project directoryand file structure
 
 Command for starting django project.
 
@@ -34,10 +95,7 @@ Running development server
 $ python manage.py runserver {port_number}
 ```
 
-
-## Django app directory
-
-### Basic directory and file structure
+## Django app directory and file structure
 
 Command for starting django app.
 
@@ -89,3 +147,4 @@ Web App 뿐만 아니라 DB App 의 경우 ```run``` 뒤에 DB App의 이름을 
 
 - [Django Tutorials KR](https://docs.djangoproject.com/ko/2.0/intro/)
 - [Django 자습](https://wikidocs.net/book/837)
+- [장고 디자인 패턴(MTV)(https://itholic.github.io/django-mtv-pattern/)
