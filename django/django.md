@@ -69,6 +69,16 @@ Consist of methods, form of getting HTTPRequest and returning HTTPResponse.\
 View is the core of the logic. Gets the data from Model and hand it to Template.\
 (Similar to Controller from MVC pattern.)
 
+##### create view & check
+
+create a view and check it from web.
+
+1. url
+
+URL(Uniform Resource Locator) locates a resource in web. Location of resource must be wroted in ```urls.py``` file in order to let django access to resoures.
+
+2. view
+
 ## Django project directoryand file structure
 
 Command for starting django project.
@@ -147,4 +157,4 @@ Web App 뿐만 아니라 DB App 의 경우 ```run``` 뒤에 DB App의 이름을 
 
 - [Django Tutorials KR](https://docs.djangoproject.com/ko/2.0/intro/)
 - [Django 자습](https://wikidocs.net/book/837)
-- [장고 디자인 패턴(MTV)(https://itholic.github.io/django-mtv-pattern/)
+- [코딩장이 블로그 #django](https://itholic.github.io/tags/#django)
