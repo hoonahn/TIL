@@ -6,13 +6,11 @@
 
 > *"Django makes it easier to build better Web apps more quickly and with less code."*
 
-## Django Design Pattern
-
-### MTV
+## MTV: Django Design Pattern
 
 Django's design pattern is so called MTV(Model, Template, View), similar to MVC.
 
-#### Model
+### Model
 
 Expresses data. Coded with ```class```.\
 One Model class is expressed as one table in database system.
@@ -30,13 +28,13 @@ class News(models.Model):
 Each variables in class is a table field in db. Each field creates class instance of each models.~Field() and allocate them.\
 Therefore field creates class variable instead of instance variables.
 
-#### Template
+### Template
 
 Made with HTML and has only presentation logic for presenting the view.\
 Dynamically uses data fretched from View on templates.\
 (Similar role of View from MVC pattern.)
 
-##### Django Template Language
+#### Django Template Language
 
 Syntax used in Django Template.\
 Consists of:
@@ -63,21 +61,82 @@ say something
 {% endcomment %}
 ```
 
-#### View
+### View
 
 Consist of methods, form of getting HTTPRequest and returning HTTPResponse.\
 View is the core of the logic. Gets the data from Model and hand it to Template.\
 (Similar to Controller from MVC pattern.)
 
-##### create view & check
+#### create view & check: url<-->view<-->template
 
 create a view and check it from web.
 
 1. url
 
-URL(Uniform Resource Locator) locates a resource in web. Location of resource must be wroted in ```urls.py``` file in order to let django access to resoures.
+URL(Uniform Resource Locator) locates a resource in web. Location of resource must be wroted in ```urls.py``` file in order to let django access to resoures.\
+
+Add url to Django app.
+
+```python
+# ./news/urls.py
+
+from django.conf.urls import url
+from . import views
+
+# Parameters
+# 1. Regular Expression for url patterns
+# 2. Methods from view.py
+# 3. Name of the url, view will recognize it.
+
+urlpatterns = [
+    url(r'^$', views.test_method, name='test_method')
+]
+```
 
 2. view
+
+```python
+# ./news/view.py
+
+def test_method(request):
+    return render(request, 'news/test_method.html', {})
+```
+
+3. template
+
+Template is the actual HTML file which will be on the screen.
+
+```html
+<!-- ./news/templates/news/test_method.html -->
+
+<html>
+    <head>
+        <title>NEWS</title>
+    </head>
+    <body>
+        <h3>Hello, World</h3>
+    </body>
+</html>
+```
+
+---
+
+## Definition of Django App
+
+- **Django Project**: Whole web application based on django framework.
+- **Django App**: Relatively small single application which made for a single function inside django project. There can be many apps for complex django project.
+- **```INSTALLED_APPS```**: List of apps registered in ```settings.py``` file.
+- **3rd-party (external) Django Packages**: Re-usable plugins installed by python package tools(such as pip).
+
+```bas
+# Example structure of Django project
+blog_app/       # Django project for blog
+    posts/      # App for manage main resource of the app, posts.
+    accounts/   # Manage user informations, auths, allows user to use the service.
+    replys/     # Manage replys of each posts.
+```
+
+---
 
 ## Django project directoryand file structure
 
