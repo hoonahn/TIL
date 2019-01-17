@@ -28,38 +28,13 @@ class News(models.Model):
 Each variables in class is a table field in db. Each field creates class instance of each models.~Field() and allocate them.\
 Therefore field creates class variable instead of instance variables.
 
-### Template
+### Templates
 
 Made with HTML and has only presentation logic for presenting the view.\
 Dynamically uses data fretched from View on templates.\
 (Similar role of View from MVC pattern.)
 
-#### Django Template Language
-
-Syntax used in Django Template.\
-Consists of:
-
-```django
-{# Template Variables #}
-<h3>{{ data }}</h3>
-
-{# Template Tags #}
-{% for item in data %}
-    <ol>
-        <li>{{ item.name }}</li>
-    </ol>
-{% endfor %}
-
-{# Template Filters #}
-{{ title|upper }}
-{{ date|data:"Y/m/d" }}
-
-{# Template Comments #}
-{# one-line comment #}
-{% multi-line comment %}
-say something
-{% endcomment %}
-```
+[More of templates](./templates.md)
 
 ### View
 
