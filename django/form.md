@@ -10,6 +10,12 @@
 
 ![form](./asset/form_handling.png)
 
+## Issue
+
+### Forms.ChoiceField Not Showing
+
+Other fields from django form, such as CharField, IntegerField are showing well, but some fields such as ChoiceField is not showing. Only the choice form is not showing and other things such as help_text shows well.
+
 ---
 
 #### Reference
