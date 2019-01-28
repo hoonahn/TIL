@@ -1,4 +1,4 @@
-# Nova
+# Nova (Compute)
 
 [Official Documentation](https://docs.openstack.org/nova/latest/)
 

@@ -1,4 +1,4 @@
-# Horizon
+# Horizon (Dashboard)
 
 [Official Github](https://github.com/openstack/horizon)
 
